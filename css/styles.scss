@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$light: #fdfdfd;
+$dark: #212121;
+
+$one: #f27405;
+$two: #003f63;
+$three: #64732f;
+$four: #d9304f;
+
+/* ------ General styles ------ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $dark;
+    color: $light;
+
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    padding: 2rem;
+}
+
+/* ------ Example 1 ------ */
+.btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+
+    color: $light;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: lowercase;
+
+    position: relative;
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-one {
+    &::before {
+        content: "";
+        background: $one;
+
+        width: 1.25rem;
+        height: 0.625rem;
+
+        display: block;
+
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        transition: width 200ms ease, height 800ms ease;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ------ Example 2 ------ */
+.btn-two {
+    &::before {
+        content: "";
+        background: $two;
+
+        width: 100%;
+        height: 0;
+
+        display: block;
+
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        transition: height 500ms ease;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+        height: 100%;
+    }
+}
+
+/* ------ Example 3 ------ */
+.btn-three {
+    &::before {
+        content: "";
+        background: $three;
+
+        width: 0;
+        height: 100%;
+
+        display: block;
+
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        transition: width 500ms ease;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+        width: 100%;
+    }
+}
+
+/* ------ Example 4 ------ */
+.btn-four {
+    &::before {
+        content: "";
+        background: $four;
+
+        width: 100%;
+        height: 0;
+
+        display: block;
+
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        transition: height 400ms ease;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+        // height: 100%;
+        animation: up 600ms forwards;
+    }
+}
+
+@keyframes up {
+    from {
+        height: 0;
+    }
+
+    40% {
+        height: 95%;
+    }
+
+    70% {
+        height: 80%;
+    }
+
+    to {
+        height: 100%;
+    }
+}

@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/* ------ General styles ------ */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #212121;
+  color: #fdfdfd;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem;
+}
+
+/* ------ Example 1 ------ */
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fdfdfd;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: lowercase;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-one::before {
+  content: "";
+  background: #f27405;
+  width: 1.25rem;
+  height: 0.625rem;
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: width 200ms ease, height 800ms ease;
+  transition: width 200ms ease, height 800ms ease;
+}
+
+.btn-one:hover::before, .btn-one:focus-within::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------ Example 2 ------ */
+.btn-two::before {
+  content: "";
+  background: #003f63;
+  width: 100%;
+  height: 0;
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: height 500ms ease;
+  transition: height 500ms ease;
+}
+
+.btn-two:hover::before, .btn-two:focus-within::before {
+  height: 100%;
+}
+
+/* ------ Example 3 ------ */
+.btn-three::before {
+  content: "";
+  background: #64732f;
+  width: 0;
+  height: 100%;
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: width 500ms ease;
+  transition: width 500ms ease;
+}
+
+.btn-three:hover::before, .btn-three:focus-within::before {
+  width: 100%;
+}
+
+/* ------ Example 4 ------ */
+.btn-four::before {
+  content: "";
+  background: #d9304f;
+  width: 100%;
+  height: 0;
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: height 400ms ease;
+  transition: height 400ms ease;
+}
+
+.btn-four:hover::before, .btn-four:focus-within::before {
+  -webkit-animation: up 600ms forwards;
+          animation: up 600ms forwards;
+}
+
+@-webkit-keyframes up {
+  from {
+    height: 0;
+  }
+  40% {
+    height: 95%;
+  }
+  70% {
+    height: 80%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes up {
+  from {
+    height: 0;
+  }
+  40% {
+    height: 95%;
+  }
+  70% {
+    height: 80%;
+  }
+  to {
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
